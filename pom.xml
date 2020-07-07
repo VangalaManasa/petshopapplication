@@ -16,6 +16,16 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jacoco.version>0.8.2</jacoco.version>
+		<sonar.coverage.exclusions>
+		src/main/java/com/pet/PetShopApplication.java,
+		src/main/java/com/pet/SwaggerConfig.java,
+	    src/main/java/com/pet/model/*.java,
+	    src/main/java/com/pet/dto/*.java,
+	    src/main/java/com/pet/service/*.java,
+	    src/main/java/com/pet/exceptions/*.java,
+	    src/main/java/com/pet/dao/*.java
+		</sonar.coverage.exclusions>
 	</properties>
 
 	<dependencies>

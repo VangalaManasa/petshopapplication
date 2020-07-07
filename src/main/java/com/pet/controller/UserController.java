@@ -20,6 +20,10 @@ import com.pet.service.UserService;
 
 
 
+/**
+ * @author V.Manasa
+ *
+ */
 @RestController
 public class UserController {
 	private static Log logger = LogFactory.getLog(UserController.class);
@@ -29,6 +33,10 @@ public class UserController {
 	
 	
 	
+	/**
+	 * @param loginRequestDto
+	 * @return
+	 */
 	@PostMapping("users/login")
 	public ResponseEntity<LoginResponseDto> userLogin(@Valid @RequestBody LoginRequestDto loginRequestDto) {
 		logger.info("inside user login method");

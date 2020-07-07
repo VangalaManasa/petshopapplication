@@ -17,6 +17,7 @@ import com.pet.dto.PetResponseDto;
 import com.pet.dto.PetsPurchaseDto;
 import com.pet.dto.PurchaseRequestDto;
 import com.pet.dto.PurchaseResponseDto;
+import com.pet.exceptions.OutOfPurchaseException;
 import com.pet.exceptions.PurchaseNotFoundException;
 import com.pet.model.Pet;
 import com.pet.model.Purchase;
@@ -29,8 +30,12 @@ public class PurchaseServiceImpl implements PurchaseService {
 	PetDao petDao;
 
 	@Override
-	public PurchaseResponseDto buyPet(PurchaseRequestDto purchaseRequestDto) {
+	public PurchaseResponseDto buyPet(PurchaseRequestDto purchaseRequestDto) throws OutOfPurchaseException {
 		Purchase purchase=new Purchase();
+		if(purchaseRequestDto.getNoOfPets()>4)
+		{
+			throw new OutOfPurchaseException("user can purchase  only 3");
+		}
 		BeanUtils.copyProperties(purchaseRequestDto, purchase);
 		purchase.setDate(LocalDateTime.now());
 		purchase.setTotalCost(petDao.findPetPriceByPetId(purchaseRequestDto.getPetId())*purchaseRequestDto.getNoOfPets());
