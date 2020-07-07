@@ -65,6 +65,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 	private PetsPurchaseDto addResponseDtoList(Purchase purchase) {
 		PetsPurchaseDto responseDto=new PetsPurchaseDto();
 		Optional<Pet> pets=petDao.findById(purchase.getPetId());
+		if(!pets.isPresent()) return null;
 		responseDto.setPetName(pets.get().getPetName());
 		responseDto.setPetPrice(pets.get().getPetPrice());
 		responseDto.setPetColour(pets.get().getPetColour());
