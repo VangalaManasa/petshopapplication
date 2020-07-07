@@ -1,6 +1,6 @@
 package com.pet.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ public class Purchase {
 	private int petId;
 	private double totalCost;
 	private int noOfPets;
-	private LocalDate date;
+	private LocalDateTime date;
 	public int getPurchaseId() {
 		return purchaseId;
 	}
@@ -47,12 +47,13 @@ public class Purchase {
 	public void setNoOfPets(int noOfPets) {
 		this.noOfPets = noOfPets;
 	}
-	public LocalDate getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+
 	
 	
 

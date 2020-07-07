@@ -10,12 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-
 import com.pet.dao.UserDao;
 import com.pet.dto.LoginRequestDto;
 import com.pet.dto.LoginResponseDto;
 import com.pet.exceptions.InvalidCredentialsException;
-import com.pet.exceptions.ResourceNotFoundException;
 import com.pet.model.User;
 import com.pet.service.UserService;
 @Service
